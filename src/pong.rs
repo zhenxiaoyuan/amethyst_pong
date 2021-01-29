@@ -1,7 +1,18 @@
-use amethyst::{assets::{AssetStorage, Loader, Handle}, core::transform::Transform, ecs::{Component, DenseVecStorage}, prelude::*, renderer::{Camera, ImageFormat, SpriteRender, SpriteSheet, SpriteSheetFormat, Texture, palette::chromatic_adaptation::AdaptInto}};
+use amethyst::{
+        assets::{AssetStorage, Loader, Handle},
+        core::transform::Transform, 
+        ecs::{Component, DenseVecStorage}, 
+        prelude::*, 
+        renderer::{Camera, ImageFormat, SpriteRender, 
+            SpriteSheet, SpriteSheetFormat, Texture, 
+            palette::chromatic_adaptation::AdaptInto}
+    };
 
 pub const ARENA_HEIGHT: f32 = 100.0;
 pub const ARENA_WIDTH: f32 = 100.0;
+
+pub const PADDLE_HEIGHT: f32 = 16.0;
+pub const PADDLE_WIDTH: f32 = 4.0;
 
 pub struct Pong;
 
@@ -27,9 +38,6 @@ fn initialise_camera(world: &mut World) {
         .with(transform)
         .build();
 }
-
-pub const PADDLE_HEIGHT: f32 = 16.0;
-pub const PADDLE_WIDTH: f32 = 4.0;
 
 #[derive(Eq, PartialEq)]
 pub enum Side {
